@@ -24,7 +24,11 @@ function playGame() {
     }
     if (deck.length < 4) {
       console.log("Not enough cards in the deck. Game over.");
-      console.log(`You got total ${chips} chips.`);
+      if (chips < 0) {
+        console.log(`You lost total ${Math.abs(chips)} chips.`);
+      } else {
+        console.log(`You got total ${chips} chips.`);
+      }
       rl.close();
       return;
     }
